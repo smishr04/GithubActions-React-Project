@@ -26,6 +26,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build Project
-        run: npm run Build
+        run: npm run build
       - name: Deloy 
         run: echo "Deplyoment Started"
