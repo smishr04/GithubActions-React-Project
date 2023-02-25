@@ -48,7 +48,7 @@ jobs:
       - name: upload artifacts
         uses: actions/upload-artifact@v3
         with: 
-          name: distfiles
+          name: dist-files
           path: |
             dist
             package.json
@@ -58,7 +58,9 @@ jobs:
     steps:
       - name: Get build artifacts
         uses: actions/download-artifact@v3
-      - name: Deloy 
+        with:
+          name: dist-files
+      - name: Deploy 
         run: |
           echo "Deplyoment Started..." 
           ls 
