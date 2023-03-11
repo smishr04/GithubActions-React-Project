@@ -94,3 +94,11 @@ jobs:
           ls 
       - name: Output filename
         run: echo "${{ needs.build.outputs.script-file }}"
+  report:
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Information
+        run: |
+         echo "Something went wrong"
+         echo " {{ github }}"
