@@ -95,6 +95,7 @@ jobs:
       - name: Output filename
         run: echo "${{ needs.build.outputs.script-file }}"
   report:
+    needs: deploy
     if: failure()
     runs-on: ubuntu-latest
     steps:
