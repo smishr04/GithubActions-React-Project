@@ -8,7 +8,7 @@
   "numFailedTests": 0,
   "numPendingTests": 0,
   "numTodoTests": 0,
-  "startTime": 1678520197585,
+  "startTime": 1678520212625,
   "success": true,
   "testResults": [
     {
@@ -21,7 +21,7 @@
           "fullName": " MainContent should render a button",
           "status": "passed",
           "title": "should render a button",
-          "duration": 43,
+          "duration": 46,
           "failureMessages": []
         },
         {
@@ -32,12 +32,12 @@
           "fullName": " MainContent should show the help area after clicking the button",
           "status": "passed",
           "title": "should show the help area after clicking the button",
-          "duration": 54,
+          "duration": 61,
           "failureMessages": []
         }
       ],
-      "startTime": 1678520199527,
-      "endTime": 1678520199624,
+      "startTime": 1678520214572,
+      "endTime": 1678520214679,
       "status": "passed",
       "message": "",
       "name": "D:/Github/github-actions-course/02+Starting+Project/02 Starting Project/src/components/MainContent.test.jsx"
