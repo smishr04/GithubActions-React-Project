@@ -6,6 +6,8 @@ on: #[push, workflow_dispatch]
 jobs: 
   lint:
       runs-on: ubuntu-latest
+      container:
+        image: node:16
       steps: 
         - name: Download code
           uses: actions/checkout@v3
