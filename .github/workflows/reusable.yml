@@ -7,9 +7,9 @@ on:
         required: false
         default: "dist-files"
         type: string
-    secrets:
-      some-secret: 
-      rquired: false
+    # secrets:
+    #   some-secret: 
+    #   rquired: false
     outputs:
       result:
         description: "Result of deployment"
