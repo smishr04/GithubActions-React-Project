@@ -89,18 +89,20 @@ jobs:
           #   package.json
   deploy:
     needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: dist-files
-      - name: Deploy 
-        run: |
-          echo "Deplyoment Started..." 
-          ls 
-      - name: Output filename
-        run: echo "${{ needs.build.outputs.script-file }}"
+    uses: ./.github/workflows/reusable.yml
+    
+    # runs-on: ubuntu-latest
+    # steps:
+    #   - name: Get build artifacts
+    #     uses: actions/download-artifact@v3
+    #     with:
+    #       name: dist-files
+    #   - name: Deploy 
+    #     run: |
+    #       echo "Deplyoment Started..." 
+    #       ls 
+    #   - name: Output filename
+    #     run: echo "${{ needs.build.outputs.script-file }}"
   report:
     needs: [deploy,lint]
     if: failure()
