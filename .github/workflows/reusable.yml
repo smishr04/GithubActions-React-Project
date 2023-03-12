@@ -7,8 +7,17 @@ on:
         required: false
         default: "dist-files"
         type: string
+    secrets:
+      some-secret: 
+      rquired: false
+    outputs:
+      result:
+        description: "Result of deployment"
+        value: ${{ jobs.deploy.outputs.outcome}}
 jobs:
   deploy:
+    outputs:
+      outcome: ${{ steps.result.outputs.step-result }}
     runs-on: ubuntu-latest
     steps:
     - name: Output Information
@@ -19,3 +28,6 @@ jobs:
         name: ${{ inputs.artifact-name }}
     - name: List Files 
       run: ls
+    - name: Result Output
+      id: result
+      run: echo "::set-output name=step-result::success"
