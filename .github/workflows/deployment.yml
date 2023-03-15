@@ -15,15 +15,8 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: 18
-        - name: Cache Dependencies
-          id: cache
-          uses: actions/cache@v3
-          with:
-            path: node_modules
-            key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-        - name: Install Dependencies
-          if: steps.cache.outputs.cache-hit != 'true'
-          run: npm ci
+        - name: Load & Cache Dependencies
+          uses: ./.github/actions/cached-deps
         - name: Lint
           run: npm run lint
   test:
