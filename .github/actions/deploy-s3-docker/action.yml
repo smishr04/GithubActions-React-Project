@@ -1,0 +1,5 @@
+name: 'Deploy to Azure Blob Storage'
+description: 'Deploy a Static Website using docker'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
