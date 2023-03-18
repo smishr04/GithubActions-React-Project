@@ -37,6 +37,8 @@ jobs:
       - name: Load & Cache Dependencies
         id: cached-deps
         uses: ./.github/actions/cached-deps
+        with:
+          caching: 'true'
       - name: Output Information
         run: echo "Cache Used? " ${{ steps.cached-deps.outputs.used-cache}}      
       - name: Run Tests
