@@ -35,7 +35,10 @@ jobs:
         with:
           node-version: 18
       - name: Load & Cache Dependencies
+        id: cached-deps
         uses: ./.github/actions/cached-deps
+      - name: Output Information
+        run: echo "Cache Used? " ${{ steps.cached-deps.outputs.used-cache}}      
       - name: Run Tests
         continue-on-error: true
         id: test
