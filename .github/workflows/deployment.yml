@@ -17,6 +17,8 @@ jobs:
             node-version: 18
         - name: Load & Cache Dependencies
           uses: ./.github/actions/cached-deps
+          with:
+            caching: 'false'
         - name: Lint
           run: npm run lint
   test:
